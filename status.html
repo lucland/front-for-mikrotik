@@ -11,10 +11,13 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <!--
   $(if refresh-timeout)
     <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
   $(endif)
+  -->
   <script language="JavaScript">
+    <!--
     $(if advert-pending=='yes')
       var popup='';
       function focusAdvert(){
@@ -31,6 +34,7 @@
       window.close();
       return false;
     }
+    -->
   </script>
 </head>
 <body $(if advert-pending=='yes' ) onLoad="openAdvert()" $(endif)>
@@ -48,29 +52,33 @@
       <div id="navbar6" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right ">
           <li><a href="login.html" class="tanpa-link">Home</a></li>
+          <!--
           $(if logged-in=='yes')
+          -->
             <li class="dropdown">
               <a class="dropdown-toggle dodown link-aktif" data-toggle="dropdown" href="#">Status <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="status.html" class="link-aktif">Cek Masa Aktif</a></li>
-                <li><a href="logout.html" class="tanpa-link">Logout</a></li>
+                <li><a href="status.html" class="link-aktif">Checar período de atividade</a></li>
+                <li><a href="logout.html" class="tanpa-link">Sair</a></li>
               </ul>
             </li>
+            <!--
           $(endif)
+          -->
         </ul>
       </div>
     </div>
   </nav>
   <div class="container">
     <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-6 box-utama" style="padding:10px;">
-      <p align="center" style="color:#fff;"><b>LOGIN SUCCESSFUL</b></p>
-      <p class="sedang-faq" align="center" style="margin-top:-10px; color:#fff;">You've successfully connected the internet</p>
+      <p align="center" style="color:#fff; font-size: 20px;"><b>BEM-VINDO À BORDO</b></p>
+      <p class="sedang-faq" align="center" style="margin-top:-10px; margin-bottom:20px; color:#fff;">Você está conectado à internet</p>
       <div class="col-xs-4" style="color:#fff;">
         <center>
           <button class="btn" style="border-radius:55px; padding:5px; background-color: transparent;">
             <img src="img/mobile/id.png" width="30px">
           </button>
-          <p style="font-size:13px; line-height: 1.2;"><small>ID Member<br>$(username)</small></p>
+          <p style="font-size:13px; line-height: 1.2;"><small>Usuário<br>$(username)</small></p>
         </center>
       </div>
       <div class="col-xs-4" style="color:#fff;">
@@ -78,11 +86,17 @@
           <button class="btn" style="border-radius:55px; padding:5px; background-color: transparent;">
             <img src="img/mobile/ma.png" width="30px">
           </button>
+          <!--
           $(if session-time-left)
-            <p style="font-size:13px; line-height: 1.2;"><small>Sisa Waktu $(session-time-left)</small></p>
+          
+            <p style="font-size:13px; line-height: 1.2;"><small>Tempo restante $(session-time-left)</small></p>
+            
           $(else)
-            <p style="font-size:13px; line-height: 1.2;"><small>Sisa Waktu<br>No Limit</small></p>
+          -->
+            <p style="font-size:13px; line-height: 1.2;"><small>Tempo restante <br>Limite excedido</small></p>
+          <!--
           $(endif)
+          -->
         </center>
       </div>
       <div class="col-xs-4" style="color:#fff;">
@@ -114,25 +128,39 @@
           <button class="btn" style="border-radius:55px; padding:5px; background-color: transparent;">
             <img src="img/mobile/kuota.png" width="30px">
           </button>
+          <!--
           $(if remain-bytes-total)
-            <p style="font-size:13px; line-height: 1.2;"><small>Remaining Quota <br>$(remain-bytes-total-nice)</small></p>
+            <p style="font-size:13px; line-height: 1.2;"><small>Cota Restante <br>$(remain-bytes-total-nice)</small></p>
           $(else)
-            <p style="font-size:13px; line-height: 1.2;"><small>Remaining Quota<br>Unlimited</small></p>
+          -->
+            <p style="font-size:13px; line-height: 1.2;"><small>Cota Restante<br>Sem Limite</small></p>
+          <!--
           $(endif)
+          -->
         </center>
       </div>
-      <br><br>
-      <p class="sedang-faq" align="center" style="color:#fff;" >Always check your active period to stay connected<br> with our internet service</p>
+      <p class="sedang-faq" align="center" style="color:#fff;">Sempre cheque o seu <b>período de atividade</b><br> com o nosso serviço de internet</p>
       <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
         <input type="hidden" name="erase-cookie" value="on">
+        <!--
         $(if login-by-mac != 'yes')
+        -->
+        <!--
           <center>
             <button type="submit" class="btn tombol-49 merah">
               <span class="glyphicon glyphicon-off"></span>&nbsp;
-              LOGOUT
+              SAIR
             </button>
           </center>
+          -->
+          <center>
+            <button type="submit" class="btn tombol-49 merah">
+              NAVEGAR
+            </button>
+          </center>
+        <!--
         $(endif)
+        -->
       </form>
     </div>
   </div>

@@ -35,29 +35,33 @@
       <div id="navbar6" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="login.html" class="tanpa-link">Home</a></li>
+          <!--
           $(if logged-in=='yes')
+          -->
           <li class="dropdown">
             <a class="dropdown-toggle dodown link-aktif" data-toggle="dropdown" href="#">Status <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="status.html" class="tanpa-link">Cek Masa Aktif</a></li>
-              <li><a href="logout.html" class="link-aktif">Logout</a></li>
+              <li><a href="status.html" class="tanpa-link">Checar período de atividade</a></li>
+              <li><a href="logout.html" class="link-aktif">Sair</a></li>
             </ul>
           </li>
+          <!--
           $(endif)
+          -->
         </ul>
       </div>
     </div>
   </nav>
   <div class="container">
     <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 box-utama" style="padding:10px;">
-      <p align="center" style="color:#fff;"><b>LOGOUT BERHASIL</b></p>
-      <p class="sedang-faq" align="center" style="margin-top:-10px; color:#fff;">Anda sudah terputus dari internet</p>
+      <p align="center" style="color:#fff; font-size: 20px;"><b>LOGOUT FEITO COM SUCESSO</b></p>
+      <p class="sedang-faq" align="center" style="margin-top:-10px; margin-bottom:20px; color:#fff;">Você foi desconectado da Internet</p>
       <div class="col-xs-4" style="color:#fff;">
         <center>
           <button class="btn" style="border-radius:55px; padding:5px; background-color: transparent;">
             <img src="img/mobile/id.png" width="30px">
           </button>
-          <p style="font-size:13px; line-height: 1.2;"><small>ID Member<br>$(username)</small></p>
+          <p style="font-size:13px; line-height: 1.2;"><small>Usuário<br>$(username)</small></p>
         </center>
       </div>
       <div class="col-xs-4" style="color:#fff;">
@@ -65,11 +69,15 @@
           <button class="btn" style="border-radius:55px; padding:5px; background-color: transparent;">
             <img src="img/mobile/ma.png" width="30px">
           </button>
+          <!--
           $(if session-time-left)
           <p style="font-size:13px; line-height: 1.2;"><small>Sisa Waktu $(session-time-left)</small></p>
           $(else)
-          <p style="font-size:13px; line-height: 1.2;"><small>Sisa Waktu<br>No Limit</small></p>
+          -->
+          <p style="font-size:13px; line-height: 1.2;"><small>Tempo Restante<br>Sem Limite</small></p>
+          <!--
           $(endif)
+          -->
         </center>
       </div>
       <div class="col-xs-4" style="color:#fff;">
@@ -77,7 +85,7 @@
           <button class="btn" style="border-radius:55px; padding:5px; background-color: transparent;">
             <img src="img/mobile/time.png" width="30px">
           </button>
-          <p style="font-size:13px; line-height: 1.2;"><small>Online <br>$(uptime)</small></p>
+          <p style="font-size:13px; line-height: 1.2;"><small>Online<br>$(uptime)</small></p>
         </center>
       </div>
       <div class="col-xs-4" style="color:#fff;">
@@ -101,23 +109,31 @@
           <button class="btn" style="border-radius:55px; padding:5px; background-color: transparent;">
             <img src="img/mobile/kuota.png" width="30px">
           </button>
+          <!--
           $(if remain-bytes-total)
           <p style="font-size:13px; line-height: 1.2;"><small>Sisa Kuota <br>$(remain-bytes-total-nice)</small></p>
           $(else)
-          <p style="font-size:13px; line-height: 1.2;"><small>Sisa Kuota<br>Unlimited</small></p>
+          -->
+          <p style="font-size:13px; line-height: 1.2;"><small>Cota Restante<br>Limite excedido</small></p>
+          <!--
           $(endif)
+          -->
         </center>
       </div>
-      <p class="sedang-faq" align="center" style="color:#fff;">Jika ingin menggunakan kembali <b>voucher</b> anda<br>silahkan klik tombol <b>login</b> dibawah ini</p>
+      <p class="sedang-faq" align="center" style="color:#fff;">Se você quiser reutilizar seu <b>voucher</b>, clique no botão de <b>login</b> abaixo</p>
       <form action="$(link-login)" name="login" onSubmit="return openLogin()">
         <input type="hidden" name="erase-cookie" value="on">
+        <!--
         $(if login-by-mac != 'yes')
+        -->
         <center>
           <button type="submit" class="btn tombol-49 merah">
-            <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;LOGIN
+            LOGIN
           </button>
         </center>
+        <!--
         $(endif)
+        -->
       </form>
     </div>
   </div>
